@@ -1,0 +1,12 @@
+C:\Users\Phat\source\repos\Module1\Module1Model\bin\Debug\net6.0\Module1Model.deps.json
+C:\Users\Phat\source\repos\Module1\Module1Model\bin\Debug\net6.0\Module1Model.dll
+C:\Users\Phat\source\repos\Module1\Module1Model\bin\Debug\net6.0\Module1Model.pdb
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\Module1Model.csproj.AssemblyReference.cache
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\Module1Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\Module1Model.AssemblyInfoInputs.cache
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\Module1Model.AssemblyInfo.cs
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\Module1Model.csproj.CoreCompileInputs.cache
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\Module1Model.dll
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\refint\Module1Model.dll
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\Module1Model.pdb
+C:\Users\Phat\source\repos\Module1\Module1Model\obj\Debug\net6.0\ref\Module1Model.dll
