@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Module1Model.Models
 {
@@ -17,5 +13,10 @@ namespace Module1Model.Models
 
         [Required]
         public string password { get; set; }
+
+        [ForeignKey("AdminUserRole")]
+        public int adminUserRoleId { get; set; }
+
+        public AdminUserRole adminUserRole { get; set; }
     }
 }

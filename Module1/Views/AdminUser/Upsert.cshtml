@@ -1,0 +1,69 @@
+﻿@model Module1Model.ViewModels.AdminUserVM
+@{
+    var title = "Create Admin User";
+}
+<form method="post">
+    <div class="row p-3 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="adminUser.adminUserId" />
+        @if (Model.adminUser != null)
+        {
+            //Edit
+            title = "Edit Book";
+        }
+        <div class="col-12 border-bottom">
+            <h2 class="text-primary">@title</h2>
+        </div>
+        <div class="col-8 pt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="adminUser.userName"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="adminUser.userName" class="form-control" />
+                    <span asp-validation-for="adminUser.userName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="adminUser.password"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="adminUser.password" class="form-control" />
+                    <span asp-validation-for="adminUser.password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="adminUser.adminUserRoleId"></label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(u => u.adminUser.adminUserRoleId, Model.adminUserRoleList, "--AdminUserRole List--",
+                        new { @class = "form-control" })
+                    <span asp-validation-for="adminUser.adminUserRoleId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4 offset-4">
+                    @if (Model.adminUser == null)
+                    {
+                        <button type="submit" class="btn btn-primary form-control">Create</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-primary form-control">Update</button>
+                    }
+                </div>
+                <div class="col-4">
+                    <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+}

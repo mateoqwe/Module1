@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Module1Model.Models
 {
@@ -14,5 +9,9 @@ namespace Module1Model.Models
 
         [Required]
         public string roleName { get; set; }
+
+        public int? rolePower { get; set; }
+
+        public List<AdminUser>? adminUsers { get; set; }
     }
 }

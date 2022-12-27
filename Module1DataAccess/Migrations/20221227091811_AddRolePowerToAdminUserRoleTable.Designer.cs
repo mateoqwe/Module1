@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Module1DataAccess.Data;
 
@@ -11,9 +12,11 @@ using Module1DataAccess.Data;
 namespace Module1DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221227091811_AddRolePowerToAdminUserRoleTable")]
+    partial class AddRolePowerToAdminUserRoleTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +33,7 @@ namespace Module1DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("adminUserId"));
 
-                    b.Property<int>("adminUserRoleId")
+                    b.Property<int?>("adminUserRoleId")
                         .HasColumnType("int");
 
                     b.Property<string>("password")
@@ -87,18 +90,14 @@ namespace Module1DataAccess.Migrations
 
             modelBuilder.Entity("Module1Model.Models.AdminUser", b =>
                 {
-                    b.HasOne("Module1Model.Models.AdminUserRole", "adminUserRole")
-                        .WithMany("adminUsers")
-                        .HasForeignKey("adminUserRoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("adminUserRole");
+                    b.HasOne("Module1Model.Models.AdminUserRole", null)
+                        .WithMany("Books")
+                        .HasForeignKey("adminUserRoleId");
                 });
 
             modelBuilder.Entity("Module1Model.Models.AdminUserRole", b =>
                 {
-                    b.Navigation("adminUsers");
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }
