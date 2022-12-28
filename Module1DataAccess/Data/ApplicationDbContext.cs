@@ -20,5 +20,13 @@ namespace Module1DataAccess.Data
         public DbSet<AdminUserRole> AdminUserRoles { get; set; }
 
         public DbSet<Screen> Screens { get; set; }
+
+        public DbSet<AdminUserFromView> AdminUserFromViews { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //configure SQL View
+            modelBuilder.Entity<AdminUserFromView>().HasNoKey().ToView("GetAdminUserInfo");
+        }
     }
 }

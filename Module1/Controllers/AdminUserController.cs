@@ -18,7 +18,7 @@ namespace Module1.Controllers
 
         public IActionResult Index()
         {
-            List<AdminUser> objList = _db.AdminUsers.Include(u => u.adminUserRole).AsNoTracking().ToList();
+            List<AdminUserFromView> objList = _db.AdminUserFromViews.ToList();
             return View(objList);
         }
 

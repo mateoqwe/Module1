@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Module1Model.Models.AdminUser>
+﻿@model IEnumerable<Module1Model.Models.AdminUserFromView>
 
 <br />
 <br />
@@ -32,7 +32,7 @@
                             @item.userName
                         </td>
                         <td>
-                            @item.adminUserRole.roleName
+                            @item.roleName
                         </td>
                         <td>
                             <a class="btn btn-primary text-white" asp-action="Upsert" asp-route-Id="@item.adminUserId">
